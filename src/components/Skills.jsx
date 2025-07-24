@@ -12,23 +12,26 @@ const Skills = () => {
 		>
 			<div ref={ref}>
 				<div
-					className={`p-6 w-full mx-auto transition-all duration-700 ${isVisible ? 'fade-in-up' : 'opacity-0 translate-y-50'
-						}`}
+					className={`p-6 w-full mx-auto transition-all duration-700 ${
+						isVisible ? 'fade-in-up' : 'opacity-0 translate-y-50'
+					}`}
 				>
 					<div className="w-full max-w-7xl mx-auto transition-all duration-700 fade-in-up">
 						<div className="text-center mb-12">
-							<h1 className="text-4xl sm:text-5xl font-bold text-slate-900 relative inline-block mb-4">
+							<h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white relative inline-block mb-4">
 								<span className="relative z-10">Habilidades</span>
 							</h1>
-							<p className="text-gray-600 text-lg">Estas son las herramientas y competencias que aplico en el desarrollo y despliegue de soluciones tecnológicas.</p>
+							<p className="text-gray-600 dark:text-gray-300 text-lg">
+								Estas son las herramientas y competencias que aplico en el desarrollo y despliegue de soluciones tecnológicas.
+							</p>
 						</div>
 
 						<div className="flex flex-wrap justify-center gap-6">
-							{/* Habilidades blandas - prioridad visual */}
-							<div className="w-full md:w-[48%] bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
+							{/* Habilidades blandas */}
+							<div className="w-full md:w-[48%] bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
 								<Users className="w-10 h-10 text-green-600 mb-4 animate-wobble-icon" />
 								<h3 className="text-sm font-medium text-green-600">Habilidades blandas</h3>
-								<p className="mt-2 text-slate-800">
+								<p className="mt-2 text-slate-800 dark:text-slate-200">
 									Pensamiento analítico<br />
 									Aprendizaje continuo<br />
 									Trabajo en equipo<br />
@@ -37,10 +40,10 @@ const Skills = () => {
 							</div>
 
 							{/* Lenguajes y frameworks */}
-							<div className="w-full md:w-[48%] bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
+							<div className="w-full md:w-[48%] bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
 								<Code className="w-10 h-10 text-green-600 mb-4 animate-wobble-icon" />
 								<h3 className="text-sm font-medium text-green-600">Lenguajes y Frameworks</h3>
-								<p className="mt-2 text-slate-800">
+								<p className="mt-2 text-slate-800 dark:text-slate-200">
 									JavaScript, PHP, C#, SQL<br />
 									Bootstrap, Tailwind, Docker<br />
 									HTML5, CSS3, Vue.js, Angular, React<br />
@@ -49,10 +52,10 @@ const Skills = () => {
 							</div>
 
 							{/* Infraestructura y herramientas */}
-							<div className="w-full md:w-[48%] bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
+							<div className="w-full md:w-[48%] bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
 								<Settings className="w-10 h-10 text-green-600 mb-4 animate-wobble-icon" />
 								<h3 className="text-sm font-medium text-green-600">Infraestructura y herramientas</h3>
-								<p className="mt-2 text-slate-800">
+								<p className="mt-2 text-slate-800 dark:text-slate-200">
 									MySQL, SQL Server<br />
 									Git y GitHub, Apache<br />
 									Despliegue en servidores Linux y Windows<br />
@@ -61,10 +64,10 @@ const Skills = () => {
 							</div>
 
 							{/* Otros conocimientos */}
-							<div className="w-full md:w-[48%] bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
+							<div className="w-full md:w-[48%] bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300">
 								<Cpu className="w-10 h-10 text-green-600 mb-4 animate-wobble-icon" />
 								<h3 className="text-sm font-medium text-green-600">Conocimientos técnicos adicionales</h3>
-								<p className="mt-2 text-slate-800">
+								<p className="mt-2 text-slate-800 dark:text-slate-200">
 									Gestión de dominios y servicios de hosting<br />
 									IoT, Configuración de VPN<br />
 									Programación de PLC

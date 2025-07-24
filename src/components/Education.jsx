@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
-import { FaUniversity, FaProjectDiagram, FaShieldAlt, FaCode, FaNetworkWired, FaMicrochip, FaGraduationCap } from 'react-icons/fa';
+import {
+	FaUniversity,
+	FaProjectDiagram,
+	FaShieldAlt,
+	FaCode,
+	FaNetworkWired,
+	FaMicrochip,
+	FaGraduationCap
+} from 'react-icons/fa';
 import useInViewDirection from '../hooks/useInViewDirection';
+
 const educationData = [
 	{
 		id: 1,
@@ -65,22 +74,18 @@ const educationData = [
 		period: '2002 - 2013',
 		description: 'Formación integral en las áreas fundamentales del conocimiento, incluyendo matemáticas, ciencias naturales, lenguaje, ciencias sociales e informática. Proporciona las bases académicas y habilidades esenciales para la educación superior y el desarrollo personal.',
 	}
-
-
 ];
 
 const Education = () => {
 	const [selectedId, setSelectedId] = useState(educationData[0].id);
 	const [animateKey, setAnimateKey] = useState(0);
 	const selected = educationData.find((item) => item.id === selectedId);
+	const [ref, getAnimation] = useInViewDirection();
 
 	const handleSelect = (id) => {
 		setSelectedId(id);
-		setAnimateKey(prev => prev + 1); // Cambia la key para forzar el reinicio de animación
+		setAnimateKey((prev) => prev + 1);
 	};
-
-	// Hook para animar la sección
-	const [ref, getAnimation] = useInViewDirection();
 
 	return (
 		<section
@@ -91,25 +96,27 @@ const Education = () => {
 			<div
 				className={`max-w-7xl w-full flex flex-col gap-12 transform transition-all duration-1000 ease-out ${getAnimation('left')}`}
 			>
-				{/* Título principal */}
+				{/* Título */}
 				<div className="text-center">
-					<h1 className="text-4xl sm:text-5xl font-bold text-slate-900 relative inline-block mb-4">
+					<h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white relative inline-block mb-4">
 						<span className="relative z-10">Formación académica</span>
 					</h1>
-					<p className="text-gray-600 text-lg">Un resumen de mis estudios y certificaciones más relevantes.</p>
+					<p className="text-gray-600 dark:text-gray-300 text-lg">
+						Un resumen de mis estudios y certificaciones más relevantes.
+					</p>
 				</div>
 
-				{/* Contenido principal */}
+				{/* Contenido */}
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-					{/* Lista de secciones */}
+					{/* Botones de selección */}
 					<div className="flex flex-col gap-4">
 						{educationData.map((edu) => (
 							<button
 								key={edu.id}
 								onClick={() => handleSelect(edu.id)}
 								className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all border-l-4 ${edu.id === selectedId
-									? 'bg-[#86a6a5]/20 border-[#88b9aa] text-slate-900 font-semibold'
-									: 'bg-white border-transparent text-gray-600 hover:bg-[#86a6a5]/10'
+									? 'bg-[#86a6a5]/20 border-[#88b9aa] text-slate-900 dark:text-white font-semibold'
+									: 'bg-white dark:bg-gray-800 border-transparent text-gray-600 dark:text-gray-300 hover:bg-[#86a6a5]/10 dark:hover:bg-[#86a6a5]/20'
 									}`}
 							>
 								<label className="animate-wobble-icon">{edu.icon}</label>
@@ -118,7 +125,7 @@ const Education = () => {
 						))}
 					</div>
 
-					{/* Detalle seleccionado */}
+					{/* Detalle */}
 					<div
 						key={animateKey}
 						className="md:col-span-2 relative rounded-xl shadow transition-all duration-500 ease-in-out h-full flex flex-col justify-center items-start overflow-hidden opacity-0 animate-[fadeIn_0.5s_ease-in-out_forwards]"
@@ -128,10 +135,7 @@ const Education = () => {
 							backgroundPosition: 'center',
 						}}
 					>
-						{/* Capa de fondo semitransparente */}
 						<div className="absolute inset-0 bg-black/60 z-0" />
-
-						{/* Contenido */}
 						<div className="relative z-10 p-6">
 							<h2 className="text-2xl font-bold text-white mb-1">{selected.title}</h2>
 							<p className="text-sm text-gray-200">{selected.subtitle}</p>

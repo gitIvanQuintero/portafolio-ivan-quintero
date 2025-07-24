@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-gradient-to-br from-[#e3f1ec] via-white to-[#d4eee4] text-gray-900 scroll-smooth min-h-screen">
+    <div className="scroll-smooth min-h-screen bg-gradient-to-br from-[#e3f1ec] via-white to-[#d4eee4] text-gray-900 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 dark:text-gray-100 transition-colors duration-300">
       <Toaster
         toastOptions={{
           success: {
@@ -44,7 +44,7 @@ function App() {
         <section id="about">
           <About />
         </section>
-
+        
         <section id="skills">
           <Skills />
         </section>

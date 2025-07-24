@@ -5,7 +5,6 @@ import emailjs from '@emailjs/browser';
 import Turnstile from 'react-turnstile';
 import { toast } from 'react-hot-toast';
 
-// Usa tus propios IDs de EmailJS aquí:
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -30,7 +29,7 @@ const recommendations = [
 	},
 	{
 		name: "Mario Lopez",
-		relation: "Amigo y compañero de ciclista",
+		relation: "Amigo y compañero ciclista",
 		comment: "Iván es una persona responsable, con gran capacidad de adaptación al cambio y a entornos colaborativos. Su carácter firme fortalece tanto su desempeño como sus relaciones interpersonales. Se destaca por su creatividad y habilidad para resolver problemas, lo que hace que trabajar con él sea altamente enriquecedor.",
 	},
 ];
@@ -44,7 +43,6 @@ const Contact = () => {
 
 	const sendEmail = async (e) => {
 		e.preventDefault();
-
 		if (!token) {
 			toast.error('Por favor, valida el reCAPTCHA antes de enviar');
 			return;
@@ -54,19 +52,16 @@ const Contact = () => {
 
 		try {
 			await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY);
-
-			const userEmail = form.current.user_email.value;
-			const userName = form.current.user_name.value;
-			const message = form.current.message.value;
+			const { user_email, user_name, message } = form.current;
 
 			try {
 				await emailjs.send(SERVICE_ID, CONFIRM_TEMPLATE_ID, {
-					user_email: userEmail,
-					user_name: userName,
-					message: message,
+					user_email: user_email.value,
+					user_name: user_name.value,
+					message: message.value,
 				}, PUBLIC_KEY);
 			} catch (error) {
-				console.error('Error al enviar correo de confirmación:', error);
+				console.error('Error al enviar confirmación:', error);
 			}
 
 			toast.success('Mensaje enviado correctamente');
@@ -75,13 +70,12 @@ const Contact = () => {
 			setToken(null);
 			turnstileRef.current?.reset();
 		} catch (error) {
-			console.error('Error al enviar el mensaje principal:', error);
+			console.error('Error al enviar:', error);
 			toast.error('Ocurrió un error. Intenta nuevamente');
 		} finally {
 			setIsSending(false);
 		}
 	};
-
 
 	const [ref, getAnimation] = useInViewDirection();
 
@@ -93,53 +87,71 @@ const Contact = () => {
 		>
 			<div className={`max-w-6xl w-full transform transition-all duration-1000 ease-out ${getAnimation('bottom')}`}>
 				<div className="text-center mb-12">
-					<h2 className="text-4xl font-bold text-slate-900 relative inline-block mb-4">
+					<h2 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">
 						<span className="relative z-10">Contáctame</span>
 					</h2>
-					<p className="text-gray-600 text-lg">¿Tienes un proyecto en mente o deseas trabajar conmigo?</p>
+					<p className="text-gray-600 dark:text-gray-300 text-lg">
+						¿Tienes un proyecto en mente o deseas trabajar conmigo?
+					</p>
 				</div>
 
-				{/* Contenedor principal */}
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white rounded-xl shadow-xl p-8">
-					{/* Columna izquierda: Información + Formulario */}
+				<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white dark:bg-slate-800 rounded-xl shadow-xl p-8">
+					{/* Información de contacto y formulario */}
 					<div className="space-y-10">
-						<h3 className="text-2xl font-bold text-slate-900 mb-4 text-center">Información de contacto</h3>
+						<h3 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-4">
+							Información de contacto
+						</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 							<div className="flex items-center gap-4">
 								<FaEnvelope className="text-[#4b8673] text-2xl animate-wobble-icon" />
-								<p className="text-gray-700">iquinterora@gmail.com</p>
+								<p className="text-gray-700 dark:text-gray-300">iquinterora@gmail.com</p>
 							</div>
 							<div className="flex items-center gap-4">
 								<FaPhone className="text-[#4b8673] text-2xl animate-wobble-icon" />
-								<p className="text-gray-700">+57 322 233 8075</p>
+								<p className="text-gray-700 dark:text-gray-300">+57 322 233 8075</p>
 							</div>
 							<div className="flex items-center gap-4">
 								<FaMapMarkerAlt className="text-[#4b8673] text-2xl animate-wobble-icon" />
-								<p className="text-gray-700">Bogotá, Colombia</p>
+								<p className="text-gray-700 dark:text-gray-300">Bogotá, Colombia</p>
 							</div>
 							<a className="flex items-center gap-4" href="https://co.linkedin.com/in/ivan-quintero-2424a8127">
 								<FaLinkedin className="text-[#4b8673] text-2xl animate-wobble-icon" />
-								<p className="text-gray-700">Ivan Quintero</p>
+								<p className="text-gray-700 dark:text-gray-300">Ivan Quintero</p>
 							</a>
 						</div>
 
-
-						{/* Formulario */}
 						<form ref={form} onSubmit={sendEmail} className="space-y-6">
 							<div>
-								<label className="block text-sm text-gray-700 mb-1">Nombre</label>
-								<input type="text" name="user_name" required className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#4b8673]" placeholder="Tu nombre" />
+								<label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">Nombre</label>
+								<input
+									type="text"
+									name="user_name"
+									required
+									className="w-full bg-white dark:bg-slate-700 text-gray-800 dark:text-white border border-gray-300 dark:border-slate-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#4b8673]"
+									placeholder="Tu nombre"
+								/>
 							</div>
 							<div>
-								<label className="block text-sm text-gray-700 mb-1">Correo</label>
-								<input type="email" name="user_email" required className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#4b8673]" placeholder="tucorreo@email.com" />
+								<label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">Correo</label>
+								<input
+									type="email"
+									name="user_email"
+									required
+									className="w-full bg-white dark:bg-slate-700 text-gray-800 dark:text-white border border-gray-300 dark:border-slate-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#4b8673]"
+									placeholder="tucorreo@email.com"
+								/>
 							</div>
 							<div>
-								<label className="block text-sm text-gray-700 mb-1">Mensaje</label>
-								<textarea name="message" rows="4" required className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#4b8673]" placeholder="Tu mensaje aquí..."></textarea>
+								<label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">Mensaje</label>
+								<textarea
+									name="message"
+									rows="4"
+									required
+									className="w-full bg-white dark:bg-slate-700 text-gray-800 dark:text-white border border-gray-300 dark:border-slate-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#4b8673]"
+									placeholder="Tu mensaje aquí..."
+								></textarea>
 							</div>
 
-							{/* Cloudflare Turnstile CAPTCHA */}
 							<Turnstile
 								key={captchaKey}
 								sitekey={SITE_KEY}
@@ -160,30 +172,25 @@ const Contact = () => {
 						</form>
 					</div>
 
-					{/* Columna derecha: Recomendaciones */}
+					{/* Recomendaciones */}
 					<div className="flex flex-col justify-between h-full min-h-[500px]">
-						{/* Título centrado en el mismo nivel que el de la izquierda */}
-						<h3 className="text-2xl font-bold text-slate-900 mb-4 text-center">Recomendaciones</h3>
-
-						{/* Contenedor del carrusel que se adapta a la altura del contenedor izquierdo */}
+						<h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 text-center">Recomendaciones</h3>
 						<div className="relative overflow-hidden flex-1 min-h-[200px] group">
 							<div className="absolute w-full animate-slide-vertical space-y-6 group-hover:[animation-play-state:paused]">
 								{recommendations.concat(recommendations).map((rec, index) => (
 									<div
 										key={index}
-										className="bg-[#f9f9f9] border border-[#b8dacf]/50 p-6 rounded-lg shadow-sm mx-2"
+										className="bg-[#f9f9f9] dark:bg-slate-700 border border-[#b8dacf]/50 dark:border-slate-600 p-6 rounded-lg shadow-sm mx-2"
 									>
-										<p className="text-gray-700 italic mb-3">“{rec.comment}”</p>
-										<div className="font-semibold text-gray-800">{rec.name}</div>
-										<div className="text-sm text-gray-500">{rec.relation}</div>
+										<p className="text-gray-700 dark:text-gray-300 italic mb-3">“{rec.comment}”</p>
+										<div className="font-semibold text-gray-800 dark:text-white">{rec.name}</div>
+										<div className="text-sm text-gray-500 dark:text-gray-400">{rec.relation}</div>
 									</div>
 								))}
 							</div>
 						</div>
 					</div>
-
 				</div>
-
 			</div>
 		</section>
 	);
