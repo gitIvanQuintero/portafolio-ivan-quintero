@@ -25,7 +25,7 @@ const recommendations = [
 	{
 		name: "Wilmer Quintero",
 		relation: "Hermano",
-		comment: "Iván Quintero, mi hermano, es un profesional proactivo, curioso y altamente inteligente. Se caracteriza por su constante disposición para indagar, resolver problemas y buscar soluciones efectivas. Su enfoque siempre está orientado a la excelencia y la calidad en todo lo que hace..",
+		comment: "Iván Quintero, mi hermano, es un profesional proactivo, curioso y altamente inteligente. Se caracteriza por su constante disposición para indagar, resolver problemas y buscar soluciones efectivas. Su enfoque siempre está orientado a la excelencia y la calidad en todo lo que hace.",
 	},
 	{
 		name: "Mario Lopez",
@@ -91,7 +91,7 @@ const Contact = () => {
 						<span className="relative z-10">Contáctame</span>
 					</h2>
 					<p className="text-gray-600 dark:text-gray-300 text-lg">
-						¿Tienes un proyecto en mente o deseas trabajar conmigo?
+						¿Tienes un proyecto o deseas colaborar conmigo? Estoy disponible para nuevas oportunidades.
 					</p>
 				</div>
 
@@ -138,7 +138,7 @@ const Contact = () => {
 									name="user_email"
 									required
 									className="w-full bg-white dark:bg-slate-700 text-gray-800 dark:text-white border border-gray-300 dark:border-slate-600 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#4b8673]"
-									placeholder="tucorreo@email.com"
+									placeholder="Tu correo electrónico"
 								/>
 							</div>
 							<div>

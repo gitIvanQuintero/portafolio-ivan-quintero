@@ -29,11 +29,7 @@ const About = () => {
 					</h1>
 
 					<p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300 lg:text-left">
-						Soy Ingeniero en Telecomunicaciones con experiencia en desarrollo de Software FullStack.
-						Me enfoco en crear soluciones que optimicen procesos y generen valor.
-						Me especializo en productos eficientes y funcionales, con el objetivo de mejorar la experiencia del usuario.
-						Me destaco por mantener buenas relaciones con compañeros y clientes, trabajar en equipo con actitud positiva,
-						y aportar responsabilidad, pensamiento analítico y compromiso con la mejora continua.
+						Ingeniero en Telecomunicaciones con experiencia en desarrollo de software Full Stack. Me apasiona crear soluciones digitales que optimicen procesos y generen valor real. Disfruto construir productos funcionales, eficientes y centrados en mejorar la experiencia del usuario. Me considero una persona comprometida, analítica y colaborativa, que valora el trabajo en equipo y las buenas relaciones tanto con colegas como con clientes.
 					</p>
 
 					<div className="mt-10 flex justify-between items-center">
@@ -83,10 +79,10 @@ const About = () => {
 
 				{/* Imagen */}
 				<div className="grid justify-items-center fade-in-up">
-					<p className="text-2xl font-gochi text-gray-600 dark:text-gray-300 lg:text-left mb-4 -rotate-12 ms-20 animate-wobble">
-						Yo soy Iván Quintero
+					<p className="text-2xl font-gochi text-gray-800 dark:text-gray-100 lg:text-left mb-4 -rotate-12 ms-20 animate-wobble">
+						Hola, soy Iván Quintero
 					</p>
-					<svg xmlns="http://www.w3.org/2000/svg" width="103" height="102" viewBox="0 0 103 102" fill="none" className="-rotate-45 -mb-10 -me-32 -mt-6 z-10 text-gray-600 dark:text-gray-400">
+					<svg xmlns="http://www.w3.org/2000/svg" width="103" height="102" viewBox="0 0 103 102" fill="none" className="-rotate-45 -mb-10 -me-32 -mt-6 z-10 text-gray-800 dark:text-gray-100">
 						<path d="M100.676 26.5417C93.9574 46.1137 83.3723 65.5204 62.3048 74.1115C51.0557 78.6989 36.7215 76.3709 36.7673 62.5332C36.7985 53.1087 42.243 38.3844 53.849 37.3949C66.6654 36.3021 46.8111 57.0334 44.2548 58.8791C32.2897 67.5184 20.2216 71.4112 5.76428 74.151C0.348605 75.1774 3.24474 76.5966 6.85897 77.2296C9.99484 77.7788 13.5771 78.3248 16.755 78.0657C17.7243 77.9867 11.502 77.2793 10.5148 77.213C6.28171 76.9284 1.40658 76.4418 2.9682 71.2948C3.21916 70.4678 6.25335 62.9691 7.53037 63.112C8.19484 63.1864 9.21134 68.8129 9.5344 69.5548C11.6329 74.3731 14.1134 76.5032 19.3253 77.6737" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
 					</svg>
 					<img
@@ -100,4 +96,5 @@ const About = () => {
 	);
 };
 
-export default About;
+
+export default About; 

@@ -18,7 +18,7 @@ const educationData = [
 		title: 'Especialización en Desarrollo de Software',
 		subtitle: 'Uniminuto',
 		period: 'Cursando',
-		description: 'Formación orientada a adquirir herramientas avanzadas y dominar técnicas confiables que garanticen la seguridad de la información en entornos organizacionales. El programa tiene como objetivo desarrollar competencias sólidas para diseñar y construir software de alta calidad, alineado con las exigencias del mercado actual y las mejores prácticas de la industria.',
+		description: 'Formación enfocada en técnicas avanzadas para construir software seguro y de alta calidad. Alineada con estándares actuales del mercado y mejores prácticas de la industria.',
 	},
 	{
 		id: 2,
@@ -27,7 +27,7 @@ const educationData = [
 		title: 'Certificados Scrum',
 		subtitle: 'CertMind Netherlands',
 		period: '2025',
-		description: 'Formación integral en metodologías ágiles basada en el marco Scrum. Incluye certificaciones en roles clave como Practicante de Scrum, Fundamentos de Scrum, Scrum Master, Desarrollador Scrum y Scrum Product Owner. Esta capacitación fortalece la capacidad para liderar, colaborar y entregar productos de valor en ciclos iterativos de desarrollo.',
+		description: 'Capacitación en metodologías ágiles bajo el marco Scrum. Incluye certificaciones como Scrum Master, Developer, Product Owner, Practitioner y Fundamentos, fortaleciendo habilidades para liderar y colaborar en entornos iterativos.',
 	},
 	{
 		id: 3,
@@ -36,7 +36,7 @@ const educationData = [
 		title: 'Auditor Interno ISO 27001 y 9001',
 		subtitle: 'J.C. Consultores Asociados Ltda',
 		period: '2025',
-		description: 'Formación especializada en auditoría interna de sistemas de gestión, bajo los estándares internacionales ISO/IEC 27001:2022 (seguridad de la información) e ISO 9001:2015 (gestión de la calidad). Capacitación orientada a la evaluación de cumplimiento, identificación de riesgos, mejora continua y aplicación de buenas prácticas organizacionales dentro de entornos corporativos y tecnológicos.',
+		description: 'Formación en auditoría de sistemas de gestión bajo las normas ISO/IEC 27001 (seguridad de la información) e ISO 9001 (gestión de calidad). Enfocada en evaluación de riesgos, cumplimiento y mejora continua.',
 	},
 	{
 		id: 4,
@@ -45,7 +45,7 @@ const educationData = [
 		title: 'Diplomado FullStack',
 		subtitle: 'Egresados Universidad Distrital',
 		period: '2022 - 2023',
-		description: 'Programa intensivo orientado al desarrollo de aplicaciones web completas, abarcando tanto el frontend como el backend. Incluye formación en tecnologías modernas para la creación de interfaces interactivas, desarrollo de APIs, bases de datos, control de versiones y despliegue en entornos productivos. Enfocado en el aprendizaje práctico y el uso de herramientas actuales del ecosistema Full Stack.',
+		description: 'Entrenamiento intensivo en desarrollo web completo, cubriendo frontend y backend. Incluye herramientas modernas para interfaces, APIs, bases de datos, control de versiones y despliegue.',
 	},
 	{
 		id: 5,
@@ -54,7 +54,7 @@ const educationData = [
 		title: 'Ingeniería en Telecomunicaciones',
 		subtitle: 'Universidad Distrital Francisco José de Caldas',
 		period: '2019 - 2022',
-		description: 'Formación enfocada en el diseño, implementación y optimización de sistemas de telecomunicaciones, redes de datos, infraestructura digital y servicios de conectividad. La carrera integra conocimientos en electrónica, programación, transmisión de señales y ciberseguridad, preparando profesionales capaces de enfrentar los desafíos tecnológicos actuales y desarrollar soluciones innovadoras para la comunicación eficiente, segura y global.',
+		description: 'Carrera orientada al diseño y gestión de redes, sistemas digitales y ciberseguridad. Combina conocimientos en electrónica, programación y comunicación eficiente.',
 	},
 	{
 		id: 6,
@@ -63,7 +63,7 @@ const educationData = [
 		title: 'Tecnología en Electrónica',
 		subtitle: 'Universidad Distrital Francisco José de Caldas',
 		period: '2014 - 2019',
-		description: 'Programa con enfoque técnico-profesional orientado al diseño, desarrollo y mantenimiento de sistemas electrónicos. Incluye formación sólida en instrumentación, automatización, control industrial, electrónica digital y analógica, así como en el uso de microcontroladores y sistemas embebidos. Prepara tecnólogos capaces de implementar soluciones innovadoras en diversos sectores industriales y tecnológicos.',
+		description: 'Enfoque técnico en el desarrollo de sistemas electrónicos, automatización y control. Formación en electrónica digital y analógica, microcontroladores y sistemas embebidos.',
 	},
 	{
 		id: 7,
@@ -72,7 +72,7 @@ const educationData = [
 		title: 'Bachillerato',
 		subtitle: 'Colegio Rembrandt',
 		period: '2002 - 2013',
-		description: 'Formación integral en las áreas fundamentales del conocimiento, incluyendo matemáticas, ciencias naturales, lenguaje, ciencias sociales e informática. Proporciona las bases académicas y habilidades esenciales para la educación superior y el desarrollo personal.',
+		description: 'Formación básica en ciencias, matemáticas, lenguaje e informática. Base sólida para el desarrollo académico y profesional posterior.',
 	}
 ];
 
@@ -99,10 +99,10 @@ const Education = () => {
 				{/* Título */}
 				<div className="text-center">
 					<h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white relative inline-block mb-4">
-						<span className="relative z-10">Formación académica</span>
+						<span className="relative z-10">Formación Académica</span>
 					</h1>
 					<p className="text-gray-600 dark:text-gray-300 text-lg">
-						Un resumen de mis estudios y certificaciones más relevantes.
+						Mis estudios, certificaciones y procesos de formación continua.
 					</p>
 				</div>
 

@@ -10,7 +10,7 @@ const experienceData = [
 		company: 'RST Asociados',
 		period: 'Julio 2024 - Actualidad',
 		description:
-			'Desarrollo Full Stack con Vue.js y Laravel. Integración de Web Services y automatización de procesos mediante bots para WhatsApp Business. Administración de bases de datos MySQL y SQL Server. Despliegue de aplicaciones en servidores Linux y Windows. Gestión de dominios y servicios de hosting.',
+			'Desarrollo Full Stack utilizando Vue.js y Laravel. Integración de Web Services y automatización de procesos a través de bots para WhatsApp Business. Administración de bases de datos MySQL y SQL Server. Despliegue de aplicaciones en servidores Linux y Windows. Gestión de dominios y servicios de hosting.',
 	},
 	{
 		id: 2,
@@ -19,7 +19,7 @@ const experienceData = [
 		company: 'Accedo Digital',
 		period: 'Abril 2022 - Julio 2024',
 		description:
-			'Desarrollo web con Angular, Vue.js, Laravel y C#. Maquetación responsive con CSS y Bootstrap. Diseño y personalización de sitios WordPress. Administración de bases de datos SQL Server y MySQL. Participación en todas las etapas del ciclo de desarrollo: análisis, implementación y soporte técnico.',
+			'Desarrollo web con Angular, Vue.js, Laravel y C#. Maquetación responsiva con CSS y Bootstrap. Diseño y personalización de sitios WordPress. Administración de bases de datos SQL Server y MySQL. Participación en todo el ciclo de desarrollo: análisis, implementación y soporte técnico.',
 	},
 	{
 		id: 3,
@@ -28,7 +28,7 @@ const experienceData = [
 		company: 'Colvatel (ETB)',
 		period: 'Diciembre 2021 - Abril 2022',
 		description:
-			'Instalación y configuración de dispositivos IoT en entornos residenciales. Verificación técnica de servicios sobre redes de fibra óptica. Capacitación personalizada a usuarios finales para optimizar el uso y la experiencia con los dispositivos implementados.',
+			'Instalación y configuración de dispositivos IoT en entornos residenciales. Verificación técnica de servicios sobre redes de fibra óptica. Capacitación personalizada a usuarios finales para optimizar la experiencia con los dispositivos implementados.',
 	},
 	{
 		id: 4,
@@ -37,18 +37,19 @@ const experienceData = [
 		company: 'Comware',
 		period: 'Mayo 2021 - Noviembre 2021',
 		description:
-			'Desarrollo de aplicaciones con C# .NET y SQL Server. Administración de bases de datos y configuración de redes LAN y VPN. Soporte técnico a usuarios, tanto presencial como de forma remota, asegurando continuidad operativa.',
+			'Desarrollo de aplicaciones con C# .NET y SQL Server. Administración de bases de datos. Configuración de redes LAN y VPN. Soporte técnico a usuarios, presencial y remoto, asegurando la continuidad operativa.',
 	},
 	{
 		id: 5,
 		icon: <FaMicrochip className="text-xl text-white" />,
 		title: 'Tecnólogo en Electrónica',
-		company: 'Taox sas',
+		company: 'Taox SAS',
 		period: 'Noviembre 2017 - Enero 2021',
 		description:
-			'Instalación y mantenimiento de sistemas de automatización industrial. Programación de PLC y tableros electrónicos. Implementación de cableado estructurado y equipos de monitoreo para plantas de tratamiento de agua. Supervisión de procesos y aseguramiento de su correcto funcionamiento.',
+			'Instalación y mantenimiento de sistemas de automatización industrial. Programación de PLC y tableros electrónicos. Implementación de cableado estructurado y equipos de monitoreo para plantas de tratamiento de agua. Supervisión de procesos y verificación de su funcionamiento.',
 	},
 ];
+
 
 const Experience = () => {
 	const [ref, getAnimation] = useInViewDirection();
@@ -66,7 +67,7 @@ const Experience = () => {
 						<span className="relative z-10">Experiencia Profesional</span>
 					</h2>
 					<p className="text-gray-600 dark:text-gray-300 text-lg">
-						Trayectoria laboral en tecnología, desarrollo y sistemas.
+						Mi recorrido en el desarrollo de software, telecomunicaciones e integración de soluciones tecnológicas.
 					</p>
 				</div>
 
